@@ -25,15 +25,6 @@ class BitCoinValueFragment: Fragment(), CoinContract.View {
     }
 
     override fun setDataToText(value: String?) {
-
-        viewBinding?.startServiceBtn?.setOnClickListener {
-
-        }
-
-        viewBinding?.stopServiceBtn?.setOnClickListener {
-
-        }
-
         requireActivity().runOnUiThread {
             viewBinding?.valueText?.text = value
         }
@@ -42,6 +33,13 @@ class BitCoinValueFragment: Fragment(), CoinContract.View {
     private fun setUpView() {
         viewBinding?.fetchDataBtn?.setOnClickListener {
             coinPresenter.fetchBitcoinData()
+        }
+        viewBinding?.startServiceBtn?.setOnClickListener {
+            requireActivity().startService(Intent(requireActivity(), FetchDataService::class.java))
+        }
+
+        viewBinding?.stopServiceBtn?.setOnClickListener {
+            requireActivity().stopService(Intent(requireActivity(), FetchDataService::class.java))
         }
     }
 }

@@ -24,7 +24,7 @@ class SaveCookieInterceptor(private val context: Context): Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalResponse = chain.proceed(chain.request())
 
-        if (!originalResponse.headers("cookie").isEmpty()) {
+        if (originalResponse.headers("cookie").isNotEmpty()) {
             val cookies = context.getSharedPreferences("COOKIE_DATA", Context.MODE_PRIVATE)
                 .getStringSet(cookiesKey, HashSet()) as HashSet<String>
 
