@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">USBankInterview</string>
+
+    <string name="fetch_data_btn">Get Bit Coin Value</string>
+    <string name="start_btn">Start Service</string>
+    <string name="stop_btn">Stop Service</string>
+</resources>
