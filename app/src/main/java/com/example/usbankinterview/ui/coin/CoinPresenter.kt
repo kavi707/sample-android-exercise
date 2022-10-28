@@ -10,7 +10,10 @@ class CoinPresenter(private val view: CoinContract.View): CoinContract.Presenter
     override fun fetchBitcoinData() {
         CoroutineScope(Dispatchers.IO).launch {
             val response = ApiManger.getApiService()?.getBitcoinValue()
-            view.setDataToText("12.00")
+            if (response?.code() == 200)
+                view.setDataToText(response.body()?.ticker?.price)
+            else
+                view.setDataToText("Error!")
         }
     }
 }
