@@ -24,5 +24,5 @@
   Create unit test for the code.
   
 ## Algorithm question
-- ** Compaire two arrays **
+- **Compaire two arrays**</br>
 To reduce the complexity for that instead of interage two arrays, merge those two arrays into one list iterate that single list and compair each eligment start from 0 index in new list. 
