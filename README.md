@@ -4,6 +4,7 @@
 - **Network API request**</br>
   - I was struggling to retrieve the data from your end-point. I can see using browser window that data fetch, but while using retrofit
     or when I was trying via Postman, getting the same 503 error and error page ask to enable cookies
+    ![alt text](https://github.com/kavi707/sample-android-exercise/blob/master/doc/error_screenhot.png?raw=true)
   - While I check the difference in browser and my code, I was missing to process the cookies
   - For this reason, I have introduce CookieInterceptor that have two interceptors which read cookies from initial request (failure request)
     and store them in share-preference to use in immediate next request.
